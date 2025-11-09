@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechVision</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #1e40af;
+            --accent: #06b6d4;
+            --dark: #1f2937;
+            --light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Navigation Styles */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 120px 0 60px;
+            margin-top: 76px;
+        }
+        
+        .about-hero h1 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .about-hero .lead {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            color: #6b7280;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* Story Section */
+        .story-image {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .story-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Values Section */
+        .values-section {
+            background: var(--light);
+            padding: 80px 0;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .value-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Team Section */
+        .team-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-card img {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .team-card .card-body {
+            padding: 1.5rem;
+        }
+        
+        .team-name {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        /* Buttons */
+        .btn-primary {
+            background: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-eye me-2 text-primary"></i>TechVision
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold">About TechVision</h1>
+                    <p class="lead">Memimpin transformasi digital dengan solusi AI yang inovatif dan impactful</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title display-6">Our Story</h2>
+                    <p class="mb-4">
+                        Didirikan pada tahun 2018, TechVision lahir dari visi untuk membuat teknologi AI dapat 
+                        diakses oleh semua bisnis, regardless of size dan industry.
+                    </p>
+                    <p class="mb-4">
+                        Dengan tim yang terdiri dari ahli AI, data scientists, dan software engineers, kami telah 
+                        membantu lebih dari 50 perusahaan mencapai transformasi digital yang signifikan.
+                    </p>
+                    <p class="mb-4">
+                        Misi kami adalah memberdayakan bisnis dengan teknologi cerdas yang tidak hanya efisien, 
+                        tetapi juga ethical dan sustainable.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+                </div>
+                
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                         alt="Our Team at Work" class="img-fluid rounded-3 story-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title display-6">Our Values</h2>
+                    <p class="section-subtitle">Prinsip-prinsip yang memandu setiap keputusan dan tindakan kami</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4 class="value-title">Innovation</h4>
+                        <p class="text-muted">
+                            Terus berinovasi dengan teknologi terdepan untuk memberikan solusi terbaik 
+                            bagi tantangan bisnis yang kompleks.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="value-title">Integrity</h4>
+                        <p class="text-muted">
+                            Transparan dan jujur dalam setiap kolaborasi dengan klien. Kepercayaan 
+                            adalah fondasi hubungan jangka panjang.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4 class="value-title">Excellence</h4>
+                        <p class="text-muted">
+                            Berkomitmen memberikan kualitas terbaik dalam setiap project. Tidak ada 
+                            ruang untuk kompromi dalam kualitas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title display-6">Meet Our Team</h2>
+                    <p class="section-subtitle">Tim ahli dengan pengalaman di berbagai industri teknologi</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Team Member 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <img src="https://i0.wp.com/zaloraadmin.wpcomstaging.com/wp-content/uploads/2024/07/rompi-jas.png?fit=1200%2C620&ssl=1" 
+                             class="card-img-top" alt="Alex Johnson - CEO">
+                        <div class="card-body text-center">
+                            <h5 class="team-name">Alex Johnson</h5>
+                            <p class="team-role">CEO & Founder</p>
+                            <p class="text-muted">
+                                15+ years experience in AI and business transformation. 
+                                Former Google AI Research Lead.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <img src="https://media.istockphoto.com/id/1310814041/id/foto/potret-seorang-pengusaha-wanita-berdiri-di-kantor-modern.jpg?s=612x612&w=0&k=20&c=0R--GmAMZN3MkYRbEcb9f_qDR4MjaIk6zzo4ZSP_C-I=" 
+                             class="card-img-top" alt="Sarah Chen - CTO">
+                        <div class="card-body text-center">
+                            <h5 class="team-name">Sarah Chen</h5>
+                            <p class="team-role">Chief Technology Officer</p>
+                            <p class="text-muted">
+                                Expert in machine learning and cloud architecture. 
+                                PhD in Computer Science from Stanford.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                             class="card-img-top" alt="Mike Rodriguez - Lead AI Engineer">
+                        <div class="card-body text-center">
+                            <h5 class="team-name">Mike Rodriguez</h5>
+                            <p class="team-role">Lead AI Engineer</p>
+                            <p class="text-muted">
+                                Specialized in deep learning and neural networks. 
+                                Built AI systems for Fortune 500 companies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title display-6">Ready to Work With Us?</h2>
+                    <p class="section-subtitle">
+                        Mari berkolaborasi untuk menciptakan solusi teknologi yang transformative 
+                        untuk bisnis Anda.
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Start a Project</a>
+                        <a href="portfolio.html" class="btn btn-outline-primary btn-lg">View Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 TechVision. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
